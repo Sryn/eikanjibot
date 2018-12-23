@@ -29,6 +29,12 @@ To Do:
     * rudimentary program w/ unirest working OK
   * Need to learn to use Python's JSON style to get specific field in response body <- https://stackoverflow.com/a/12934757
   * Need to learn how to obfuscate the RapidAPI Key from the code
+    * https://martin-thoma.com/configuration-files-in-python/
+    * http://www.blacktechdiva.com/hide-api-keys/ for the .gitignore
+    * Need to change RapidAPI Key now <- Done - Just made a new project in RapidAPI
+  * Need to investigate the kanji code the kanjialive API accepts
+    * Have to tell the Python 2.7 interpreter to treat the text in the file as unicode <- https://www.python.org/dev/peps/pep-0263/
+    * Also have to tell MS VS Code to accept the kanji text as unicode and also to convert the kanji unicode to URL Escape Code to be used in the KanjiAlive API <- https://stackoverflow.com/q/24111955
   * Also need to think about error possibilities and implement error mitigating code
   * KanjiAlive returns link to associated MP4. Have to think about how to post for Twitter to play that MP4 natively.
       * Twitter only allows direct MP4 uploads from user's / bot's file system, so can't use KanjiAlive MP4 URL to upload.
@@ -40,7 +46,10 @@ To Do:
     * The kanji data is hosted ourselves
     * For kanji whose stroke order MP4 isn't available, might want to look into automatically converting static pics of stroke order into animated GIFs
 * Make Twitter Bot
-  * Get Twitter API Key for the Twitter Bot to use
+  * Get Twitter API Key for the Twitter Bot to use <- DONE for Twitter eiKanjiBot App
+  * Create test eiKanjiBot Twitter App
+    * DONE - using https://tweepy.readthedocs.io/en/3.7.0/getting_started.html
+    * Also proved ability to post tweet
 * Test Twitter Bot to post MP4 or Animated GIF
   * Ensure posted MP4 or Animated GIF is played natively by Twitter
 * Combine the Python program and Twitter Bot to work together
