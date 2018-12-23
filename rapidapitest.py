@@ -1,6 +1,7 @@
 # Testing connectivity of this to kanjialive thru RapidAPI
 
 import unirest
+import config
 
 kanjiCode = '%E8%B5%B7'
 
@@ -9,7 +10,7 @@ def testRapidAPI():
     url = site + kanjiCode
     response = unirest.get(url,
         headers={
-            "X-RapidAPI-Key": "24c70e3c12msh1f4c0c5946c28c1p18f46fjsn72072b7be463"
+            "X-RapidAPI-Key": config.RapidAPI['api-key']
         }
     )
     return response

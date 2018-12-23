@@ -28,8 +28,12 @@ To Do:
   * Get a RapidAPI Key <- DONE
     * rudimentary program w/ unirest working OK
   * Need to learn to use Python's JSON style to get specific field in response body <- https://stackoverflow.com/a/12934757
+  * Need to learn how to obfuscate the RapidAPI Key from the code
   * Also need to think about error possibilities and implement error mitigating code
   * KanjiAlive returns link to associated MP4. Have to think about how to post for Twitter to play that MP4 natively.
+      * Twitter only allows direct MP4 uploads from user's / bot's file system, so can't use KanjiAlive MP4 URL to upload.
+      * Thinking of ways around this:
+        1. Pre-upload the MP4, and then refer to that tweet whenever a user ask's for a specific kanji's stroke order
   * For now, just post the kanji's animated stroke order using MP4
   * Later on might look into Animated GIFs (? - Not sure if this is better)
   * Might want to think ahead into future versions where:
