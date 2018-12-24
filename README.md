@@ -49,7 +49,23 @@ To Do:
   * Get Twitter API Key for the Twitter Bot to use <- DONE for Twitter eiKanjiBot App
   * Create test eiKanjiBot Twitter App
     * DONE - using https://tweepy.readthedocs.io/en/3.7.0/getting_started.html
-    * Also proved ability to post tweet
+    * Also proved ability to post tweet - using https://www.twilio.com/blog/build-deploy-twitter-bots-python-tweepy-pythonanywhere
+  * Should test ability to detect query tweet and reply to that tweet
+    * Used:
+      * http://docs.tweepy.org/en/3.7.0/api.html
+      * https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline
+    * Detect query tweet
+      * DONE - detected mention tweet
+      * Test detect only mention tweets since last previous replied mention tweet
+      * Should store the tweet ID of the last mention that was replied to in the filesystem (config.py?)
+        * DONE - using ConfigParser + JSON
+        * based on https://stackoverflow.com/a/19078712
+    * Reply to that tweet
+      * DONE and verified
+      * Issue now is that getting mentions again would receive a list of mentions that include the previous replied to mention and that mention is (might be) at the end of the list. So updating lastMentionID could actually start at the newest mention and then ignore all other mentions between that and the previous replied to mention.
+        * Fixed this by only getting statuses (mentions) that are newer than lastMentionID
+      * Now, have to ensure that the lastMentionID that is updated in config.json is the newest of the statuses 
+        * Done this by moving the updateLastMentionID to the function that gets the mentions and only updating the largest number status.id
 * Test Twitter Bot to post MP4 or Animated GIF
   * Ensure posted MP4 or Animated GIF is played natively by Twitter
 * Combine the Python program and Twitter Bot to work together
