@@ -9,6 +9,9 @@ import time
 import datetime 
 # https://www.pythonforbeginners.com/basics/python-datetime-time-examples
 # https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
+import unicodedata
+
+defaultHeadLength = len('@eiKanjiBot ')
 
 def getAPI():
     auth = tweepy.OAuthHandler(
@@ -75,7 +78,7 @@ def tweetUpdateStatus(api, aString):
 
 def tweetReplyStatus(api, aString, statusID):
     print 'Tweeting Back: ' + aString
-    api.update_status(aString, statusID)
+    # api.update_status(aString, statusID)
     # Wait one second to prevent flooding Twitter
     # https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
     time.sleep(1)
@@ -90,14 +93,74 @@ def printHomeTimeline(api):
     updateStatusString = 'Downloaded ' + str(numTweet) + ' tweets'
     tweetUpdateStatus(api, updateStatusString)
 
+def getFirstCharacter(statusText):
+    global defaultHeadLength
+
+    firstCharacter = '_'
+    if len(statusText) > defaultHeadLength:
+        statusText = statusText[defaultHeadLength:] # trim the header + one space
+        statusText = statusText.strip() # trim whitespaces front and end
+        if len(statusText) > 0:
+            firstCharacter = statusText[0]
+
+    # try:
+    #     firstCharacter = statusText[defaultHeadLength]
+    # except:
+    #     firstCharacter = '_'
+
+    return firstCharacter
+
+def getFirstCharacterName(aChar):
+    rtnString = ''
+    if len(aChar) == 1:
+        rtnString = unicodedata.name(aChar)
+    return rtnString
+
+def getFirstCharacterCategory(aChar):
+    return unicodedata.category(aChar)
+
+def getFirstCharacterTypes(aChar):
+    rtnString = ''
+    if len(aChar) == 1:
+        rtnString += '\'' + unicodedata.name(aChar) + '\' '
+        # rtnString += unicodedata.decimal(aChar) + ' ' # error if aChar is not a decimal
+        # rtnString += unicodedata.digit(aChar) + ' ' # error if aChar is not a digit
+        # rtnString += unicodedata.numeric(aChar) + ' ' # error if aChar is not a numeric
+        rtnString += '\'' + unicodedata.category(aChar) + '\' '
+
+    return rtnString        
+
+def getFirstCharacterCodePoint(aChar):
+    codePoint = ''
+    if len(aChar) == 1:
+        codePoint = hex(ord(aChar))
+    return codePoint
+
+def checkFirstCharacterCJK(aChar):
+    rtnBool = False
+    if len(aChar) == 1:
+        aCharName = getFirstCharacterName(aChar)
+        if aCharName[:3] == 'CJK':
+            rtnBool = True
+    return rtnBool
+
 def tweetBack(api, status):
     # force to refer to the global variable 
     # https://www.python-course.eu/global_vs_local_variables.php
     # global lastMentionID
 
     toUser = status.user.screen_name
+    firstCharacter = getFirstCharacter(status.text)
+    # firstCharacterCategory = getFirstCharacterCategory(firstCharacter)
+    firstCharacterTypes = getFirstCharacterTypes(firstCharacter)
+    isFirstCharacterCJK = checkFirstCharacterCJK(firstCharacter)
+    firstCharacterCodePoint = getFirstCharacterCodePoint(firstCharacter)
     strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    msgBody = 'Tweet Back ' + strDateTime
+    msgBody = 'Tweet Back ' + firstCharacter 
+    msgBody += ' NaCa: ' + firstCharacterTypes 
+    msgBody += ' CodePoint: ' + firstCharacterCodePoint
+    msgBody += ' isCJK: ' + str(isFirstCharacterCJK)
+    msgBody += ' ' + strDateTime
     updateStatusString = '@' + toUser + ' ' + msgBody
     tweetReplyStatus(api, updateStatusString, status.id)
 

@@ -56,7 +56,7 @@ To Do:
       * https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline
     * Detect query tweet
       * DONE - detected mention tweet
-      * Test detect only mention tweets since last previous replied mention tweet
+      * Test detect only mention tweets since last previous replied mention tweet <- DONE
       * Should store the tweet ID of the last mention that was replied to in the filesystem (config.py?)
         * DONE - using ConfigParser + JSON
         * based on https://stackoverflow.com/a/19078712
@@ -66,6 +66,23 @@ To Do:
         * Fixed this by only getting statuses (mentions) that are newer than lastMentionID
       * Now, have to ensure that the lastMentionID that is updated in config.json is the newest of the statuses 
         * Done this by moving the updateLastMentionID to the function that gets the mentions and only updating the largest number status.id
+  * Need to prepare some draft functions that:
+    1. Reads the body of the query tweet/mention/status <- DONE
+    2. Remove the '@aTwitterUser ' from it, where that is the Twitter handle of the user that sent the mention + the space after it <- DONE
+    3. Gets the first character of the remaining body
+       * DONE - but might need to make a more robust function
+       * I think I made a more robust function for this by trimming
+         * https://stackoverflow.com/a/663175
+         * https://stackoverflow.com/a/1185529
+    * Have to code how to determine a character is a (Japanese) kanji
+      * https://docs.python.org/2/library/unicodedata.html
+      * using 'import unicodedata'
+      * get character's name
+      * check if character's name starts with 'CJK'
+      * Note: Can't differentiate if Chinese, Japanese or Korean 'Han' character as Unicode is a unified character set for East Asian characters
+    4. Determines whether that character is a (Japanese) kanji or not
+       * If that is not a (Japanese) kanji, then reply to @aTwitterUser that it (the bot) cannot understand the query mention and include a usage message, or don't reply at all, or ..
+       * If that is a (Japanese) kanji, then reply back to @aTwitterUser that same kanji
 * Test Twitter Bot to post MP4 or Animated GIF
   * Ensure posted MP4 or Animated GIF is played natively by Twitter
 * Combine the Python program and Twitter Bot to work together
