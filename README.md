@@ -83,7 +83,10 @@ To Do:
     4. Determines whether that character is a (Japanese) kanji or not
        * If that is not a (Japanese) kanji, then reply to @aTwitterUser that it (the bot) cannot understand the query mention and include a usage message, or don't reply at all, or ..
        * If that is a (Japanese) kanji, then reply back to @aTwitterUser that same kanji
+      * DONE - For now, reply with usage help to non-kanji mentions
 * Test Twitter Bot to post MP4 or Animated GIF
+  * Need to call up the other Python file to get the stroke order MP4 (? Should I do it this way)
+    * DONE - Figured out it was something similar to the config.py settings import, but this time a function call
   * Ensure posted MP4 or Animated GIF is played natively by Twitter
 * Combine the Python program and Twitter Bot to work together
 * Host the combined program Bot somewhere

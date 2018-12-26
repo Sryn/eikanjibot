@@ -13,6 +13,7 @@ import unicodedata
 
 defaultHeadLength = len('@eiKanjiBot ')
 
+# using config.py file
 def getAPI():
     auth = tweepy.OAuthHandler(
         config.TwitterAPI['API-key']
@@ -25,6 +26,7 @@ def getAPI():
 
     return tweepy.API(auth)
 
+# using config.json file thru ConfigParser
 def getAPI2():
     # https://stackoverflow.com/a/19078712
 
@@ -152,15 +154,22 @@ def tweetBack(api, status):
     toUser = status.user.screen_name
     firstCharacter = getFirstCharacter(status.text)
     # firstCharacterCategory = getFirstCharacterCategory(firstCharacter)
-    firstCharacterTypes = getFirstCharacterTypes(firstCharacter)
+    # firstCharacterTypes = getFirstCharacterTypes(firstCharacter)
     isFirstCharacterCJK = checkFirstCharacterCJK(firstCharacter)
-    firstCharacterCodePoint = getFirstCharacterCodePoint(firstCharacter)
+    # firstCharacterCodePoint = getFirstCharacterCodePoint(firstCharacter)
     strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    msgBody = 'Tweet Back ' + firstCharacter 
-    msgBody += ' NaCa: ' + firstCharacterTypes 
-    msgBody += ' CodePoint: ' + firstCharacterCodePoint
-    msgBody += ' isCJK: ' + str(isFirstCharacterCJK)
-    msgBody += ' ' + strDateTime
+    # msgBody = 'Tweet Back ' + firstCharacter 
+    # msgBody += ' NaCa: ' + firstCharacterTypes 
+    # msgBody += ' CodePoint: ' + firstCharacterCodePoint
+    # msgBody += ' isCJK: ' + str(isFirstCharacterCJK)
+    # msgBody += ' ' + strDateTime
+
+    if isFirstCharacterCJK:
+        # msgBody = firstCharacter
+        msgBody = config.rtnMP4Test(firstCharacter)
+        msgBody += ' ' + strDateTime
+    else:
+        msgBody = 'Usage: \'@eiKanjiBot {Kanji}\' where {Kanji} is the one Kanji that you want the stroke order MP4 of ' + strDateTime
     updateStatusString = '@' + toUser + ' ' + msgBody
     tweetReplyStatus(api, updateStatusString, status.id)
 
