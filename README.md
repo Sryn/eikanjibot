@@ -88,10 +88,22 @@ To Do:
   * Need to call up the other Python file to get the stroke order MP4 (? Should I do it this way)
     * DONE - Figured out it was something similar to the config.py settings import, but this time a function call
   * Ensure posted MP4 or Animated GIF is played natively by Twitter
+    * Skipping this for this version
 * Combine the Python program and Twitter Bot to work together
+  * DONE - For now, it is not very self error correction
+  * Need to list dependencies and code error mitigation
+  * Need to code in periodic check of @eiKanjiBot received mentions every 15 secs (?)
+    * DONE - see setIntervalTest.py
+  * Have set an on/off switch in the runProgram field in fixedConfig.json
+  * Moved lastMentionID field to varConfig.json
+  * config.json is now purely for secret settings
 * Host the combined program Bot somewhere
   * Note on potential usage to gauge data requirements so as to anticipate data / hosting bill
   * Probably code in something into the Bot in case of cost overruns
   * Also think about and mitigate flooding
   * Build in telemetrics into the Bot for statistical purposes
+* Make config.json.example
 * Release and announce the availability of the Bot
+  * It's Alive!!
+    * Hosted on @PythonAnywhere
+    * Announced on Twitter and Reddit at about 5:45pm Fri 28th Dec 2018, UTC+8

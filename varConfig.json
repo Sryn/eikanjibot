@@ -1,0 +1,10 @@
+{
+    "comment": {
+        "createDate": "20181228",
+        "createby": "Sryn",
+        "purpose": "To store non-secret settings + offline variables that will change",
+        "fileName": "varConfig.json"
+    },
+    "lastMentionID": 1077213307109396480,
+    "lastMentionIDBackup": 1077213307109396480
+}

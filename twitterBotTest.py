@@ -10,8 +10,10 @@ import datetime
 # https://www.pythonforbeginners.com/basics/python-datetime-time-examples
 # https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
 import unicodedata
+import KanjiAliveMP4
 
 defaultHeadLength = len('@eiKanjiBot ')
+intervalSeconds = 15.0
 
 # using config.py file
 def getAPI():
@@ -46,7 +48,9 @@ def getAPI2():
     return tweepy.API(auth)
 
 def getLastMentionID():
-    with open('config.json', 'r') as f:
+    # with open('config.json', 'r') as f:
+    #     config = json.load(f)
+    with open('varConfig.json', 'r') as f:
         config = json.load(f)
 
     try:
@@ -63,14 +67,18 @@ def writeLastMentionID(mentionID):
         json.dump(config, f)
 
 def updateLastMentionID(mentionID):
-    with open('config.json', 'r') as f:
+    # with open('config.json', 'r') as f:
+    #     config = json.load(f)
+    with open('varConfig.json', 'r') as f:
         config = json.load(f)
 
     #edit the data
     config['lastMentionID'] = mentionID
 
     #write it back to the file
-    with open('config.json', 'w') as f:
+    # with open('config.json', 'w') as f:
+    #     json.dump(config, f)
+    with open('varConfig.json', 'w') as f:
         json.dump(config, f)
 
     print 'Updated lastMentionID to ' + str(mentionID)
@@ -80,7 +88,7 @@ def tweetUpdateStatus(api, aString):
 
 def tweetReplyStatus(api, aString, statusID):
     print 'Tweeting Back: ' + aString
-    # api.update_status(aString, statusID)
+    api.update_status(aString, statusID)
     # Wait one second to prevent flooding Twitter
     # https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
     time.sleep(1)
@@ -166,10 +174,12 @@ def tweetBack(api, status):
 
     if isFirstCharacterCJK:
         # msgBody = firstCharacter
-        msgBody = config.rtnMP4Test(firstCharacter)
-        msgBody += ' ' + strDateTime
-    else:
-        msgBody = 'Usage: \'@eiKanjiBot {Kanji}\' where {Kanji} is the one Kanji that you want the stroke order MP4 of ' + strDateTime
+        # msgBody = config.rtnMP4Test(firstCharacter)
+        # msgBody = KanjiAliveMP4.rtnMP4Test(firstCharacter)
+        msgBody = KanjiAliveMP4.getKanjiAliveMP4(firstCharacter)
+        # msgBody += ' ' + strDateTime
+    # else:
+    #     msgBody = 'Usage: \'@eiKanjiBot {Kanji}\' where {Kanji} is the one Kanji that you want the stroke order MP4 of ' + strDateTime
     updateStatusString = '@' + toUser + ' ' + msgBody
     tweetReplyStatus(api, updateStatusString, status.id)
 
@@ -190,21 +200,51 @@ def printMentionsTimeline(api):
     if currMaxMentionID > lastMentionID:
         updateLastMentionID(currMaxMentionID)
 
+    strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    print 'Finished printMentionsTimeline with ' + str(len(statuses)) + ' statuses ' + strDateTime
+
+def checkRunProgram():
+    rtnBool = False
+    try:
+        with open('fixedConfig.json', 'r') as f:
+            config = json.load(f)
+
+        keepRunning = config['runProgram']
+        if keepRunning == 'True':
+            rtnBool = True
+    except:
+        print 'ERROR: cannot do checkRunProgram()'
+
+    return rtnBool
+
+def callTimer(secs):
+    time.sleep(secs)
+    return 1
+
 def main():
-    # api = getAPI()
-    api = getAPI2()
+    global intervalSeconds
+    keepRunning = checkRunProgram()
 
-    # printHomeTimeline(api)
+    if keepRunning:
+        # api = getAPI()
+        api = getAPI2()
 
-    # will overwrite everything with just this one setting
-    # writeLastMentionID(datetime.datetime.now().strftime('%y%m%d%H%M%S'))
+        # printHomeTimeline(api)
 
-    # This didn't overwrite everything in there, but have to reformat the EOL
-    # Also, if the field isn't there, it'll make one
-    # updateLastMentionID(datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+        # will overwrite everything with just this one setting
+        # writeLastMentionID(datetime.datetime.now().strftime('%y%m%d%H%M%S'))
 
-    printMentionsTimeline(api)
+        # This didn't overwrite everything in there, but have to reformat the EOL
+        # Also, if the field isn't there, it'll make one
+        # updateLastMentionID(datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
 
-    print 'Done'
+        while keepRunning:
+            printMentionsTimeline(api)
+            callTimer(intervalSeconds)
+            keepRunning = checkRunProgram()
+
+        print 'Done'
+    else:
+        print 'Exiting because keepRunning is False'
 
 main()

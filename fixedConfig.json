@@ -1,0 +1,9 @@
+{
+    "comment": {
+        "fileName": "fixedConfig.json",
+        "createDate": "20181228",
+        "createby": "Sryn",
+        "purpose": "To store non-secret settings that will not change"
+    },
+    "runProgram": "False"
+}
