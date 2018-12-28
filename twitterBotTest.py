@@ -4,7 +4,7 @@
 
 import json
 import tweepy
-import config
+# import config # didn't upload this file onto PA, so runtime error
 import time
 import datetime 
 # https://www.pythonforbeginners.com/basics/python-datetime-time-examples
@@ -16,17 +16,17 @@ defaultHeadLength = len('@eiKanjiBot ')
 intervalSeconds = 15.0
 
 # using config.py file
-def getAPI():
-    auth = tweepy.OAuthHandler(
-        config.TwitterAPI['API-key']
-        , config.TwitterAPI['API-secret-key']
-    )
-    auth.set_access_token(
-        config.TwitterAPI['Access-token']
-        , config.TwitterAPI['Access-token-secret']
-    )
+# def getAPI():
+#     auth = tweepy.OAuthHandler(
+#         config.TwitterAPI['API-key']
+#         , config.TwitterAPI['API-secret-key']
+#     )
+#     auth.set_access_token(
+#         config.TwitterAPI['Access-token']
+#         , config.TwitterAPI['Access-token-secret']
+#     )
 
-    return tweepy.API(auth)
+#     return tweepy.API(auth)
 
 # using config.json file thru ConfigParser
 def getAPI2():
@@ -87,7 +87,7 @@ def tweetUpdateStatus(api, aString):
     api.update_status(aString)
 
 def tweetReplyStatus(api, aString, statusID):
-    print 'Tweeting Back: ' + aString
+    # print 'Tweeting Back: ' + aString
     api.update_status(aString, statusID)
     # Wait one second to prevent flooding Twitter
     # https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
@@ -165,7 +165,7 @@ def tweetBack(api, status):
     # firstCharacterTypes = getFirstCharacterTypes(firstCharacter)
     isFirstCharacterCJK = checkFirstCharacterCJK(firstCharacter)
     # firstCharacterCodePoint = getFirstCharacterCodePoint(firstCharacter)
-    strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    # strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     # msgBody = 'Tweet Back ' + firstCharacter 
     # msgBody += ' NaCa: ' + firstCharacterTypes 
     # msgBody += ' CodePoint: ' + firstCharacterCodePoint
@@ -191,7 +191,7 @@ def printMentionsTimeline(api):
     for status in statuses:
         # print numTweet + ': ' + str(status.id) + ' - ' + str(status.text)
         # print str(numTweet) + ': ' + str(status.id) + ', status.source - ' + status.source + ', status.user.source - ' + status.user.name + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
-        print str(numTweet) + ': ' + str(status.id) + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
+        # print str(numTweet) + ': ' + str(status.id) + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
         numTweet += 1
         tweetBack(api, status)
         if int(status.id) > currMaxMentionID:

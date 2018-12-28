@@ -106,4 +106,8 @@ To Do:
 * Release and announce the availability of the Bot
   * It's Alive!!
     * Hosted on @PythonAnywhere
+      * Running it in the background
+      * https://stackoverflow.com/questions/2975624/how-to-run-a-python-script-in-the-background-even-after-i-logout-ssh
+      * Had to comment out two print lines that also prints the kanji, as the bash console on PA can't show unicodes outside a certain range
+      * Also had to comment out the 'import config' + getAPI() as I didn't upload config.py
     * Announced on Twitter and Reddit at about 5:45pm Fri 28th Dec 2018, UTC+8
