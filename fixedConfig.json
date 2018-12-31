@@ -5,5 +5,7 @@
         "createby": "Sryn",
         "purpose": "To store non-secret settings that will not change"
     },
-    "runProgram": "False"
+    "runProgram": "True",
+    "loggingLevel": "INFO",
+    "master": "Sryn"
 }

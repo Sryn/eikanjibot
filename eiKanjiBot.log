@@ -1,0 +1,203 @@
+2018-12-30 16:01:05,636 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/u-ame_00.mp4
+2018-12-30 16:01:08,783 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 井 not available from KanjiAlive
+2018-12-30 16:01:12,043 - root - INFO - @nasvillanueva_ https://media.kanjialive.com/kanji_animations/kanji_mp4/sama_00.mp4
+2018-12-30 16:01:15,469 - root - INFO - @jufracaqui https://media.kanjialive.com/kanji_animations/kanji_mp4/o(kiru)_00.mp4
+2018-12-30 16:01:18,778 - root - INFO - @coollead ERROR: Stroke Order MP4 for 糞 not available from KanjiAlive
+2018-12-30 16:01:21,798 - root - INFO - @Sryn https://media.kanjialive.com/kanji_animations/kanji_mp4/bun-fumi_00.mp4
+2018-12-30 16:01:25,069 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/(sekinin)kan_00.mp4
+2018-12-30 16:01:28,193 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 16:01:31,466 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/shi-ko_00.mp4
+2018-12-30 16:01:34,996 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/neko_00.mp4
+2018-12-30 16:01:38,212 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 16:01:38,213 - root - INFO - SrynTwo queried ア
+2018-12-30 16:01:38,213 - root - INFO - SrynTwo queried あ
+2018-12-30 16:52:57,610 - root - INFO - Starting Up
+2018-12-30 16:52:58,805 - root - ERROR - In updateStatusWithLog(aStatus=Starting Up) with Exception=[{u'message': u'Status is a duplicate.', u'code': 187}]
+2018-12-30 16:55:07,441 - root - INFO - Closing Down
+2018-12-30 16:55:08,534 - root - ERROR - In updateStatusWithLog(aStatus=Closing Down) with Exception=[{u'message': u'Status is a duplicate.', u'code': 187}]
+2018-12-30 16:59:08,423 - root - INFO - Starting Up 20181230165908
+2018-12-30 16:59:13,842 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/u-ame_00.mp4
+2018-12-30 16:59:17,046 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 井 not available from KanjiAlive
+2018-12-30 16:59:20,148 - root - INFO - @nasvillanueva_ https://media.kanjialive.com/kanji_animations/kanji_mp4/sama_00.mp4
+2018-12-30 16:59:23,668 - root - INFO - @jufracaqui https://media.kanjialive.com/kanji_animations/kanji_mp4/o(kiru)_00.mp4
+2018-12-30 16:59:26,722 - root - INFO - @coollead ERROR: Stroke Order MP4 for 糞 not available from KanjiAlive
+2018-12-30 16:59:29,866 - root - INFO - @Sryn https://media.kanjialive.com/kanji_animations/kanji_mp4/bun-fumi_00.mp4
+2018-12-30 16:59:33,096 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/(sekinin)kan_00.mp4
+2018-12-30 16:59:36,155 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 16:59:39,301 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/shi-ko_00.mp4
+2018-12-30 16:59:42,512 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/neko_00.mp4
+2018-12-30 16:59:45,696 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 16:59:45,696 - root - INFO - @SrynTwo queried ア
+2018-12-30 16:59:45,696 - root - INFO - @SrynTwo queried あ
+2018-12-30 17:05:22,559 - root - INFO - Closing Down 20181230170522
+2018-12-30 17:08:41,308 - root - INFO - Starting Up 20181230170841
+2018-12-30 17:08:46,945 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/u-ame_00.mp4
+2018-12-30 17:08:50,276 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 井 not available from KanjiAlive
+2018-12-30 17:08:53,376 - root - INFO - @nasvillanueva_ https://media.kanjialive.com/kanji_animations/kanji_mp4/sama_00.mp4
+2018-12-30 17:08:56,521 - root - INFO - @jufracaqui https://media.kanjialive.com/kanji_animations/kanji_mp4/o(kiru)_00.mp4
+2018-12-30 17:08:59,681 - root - INFO - @coollead ERROR: Stroke Order MP4 for 糞 not available from KanjiAlive
+2018-12-30 17:09:02,804 - root - INFO - @Sryn https://media.kanjialive.com/kanji_animations/kanji_mp4/bun-fumi_00.mp4
+2018-12-30 17:09:05,959 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/(sekinin)kan_00.mp4
+2018-12-30 17:09:09,115 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 17:09:12,245 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/shi-ko_00.mp4
+2018-12-30 17:09:15,387 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/neko_00.mp4
+2018-12-30 17:09:18,571 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 17:09:18,571 - root - INFO - @SrynTwo queried ア
+2018-12-30 17:09:18,571 - root - INFO - @SrynTwo queried あ
+2018-12-30 17:09:33,576 - root - ERROR - ERROR: In getDateStats(20181230)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 307, in getDateStats
+    with open('varConfig', 'r') as f:
+IOError: [Errno 2] No such file or directory: 'varConfig'
+2018-12-30 17:09:33,576 - root - INFO - @Sryn Stats for 20181230 = UNAVAILABLE 20181230170933
+2018-12-30 17:09:50,868 - root - ERROR - ERROR: In getDateStats(20181230)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 307, in getDateStats
+    with open('varConfig', 'r') as f:
+IOError: [Errno 2] No such file or directory: 'varConfig'
+2018-12-30 17:09:50,869 - root - INFO - @Sryn Stats for 20181230 = UNAVAILABLE 20181230170950
+2018-12-30 17:10:08,043 - root - ERROR - ERROR: In getDateStats(20181230)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 307, in getDateStats
+    with open('varConfig', 'r') as f:
+IOError: [Errno 2] No such file or directory: 'varConfig'
+2018-12-30 17:10:08,043 - root - INFO - @Sryn Stats for 20181230 = UNAVAILABLE 20181230171008
+2018-12-30 17:10:25,159 - root - ERROR - ERROR: In getDateStats(20181230)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 307, in getDateStats
+    with open('varConfig', 'r') as f:
+IOError: [Errno 2] No such file or directory: 'varConfig'
+2018-12-30 17:10:25,159 - root - INFO - @Sryn Stats for 20181230 = UNAVAILABLE 20181230171025
+2018-12-30 17:10:26,187 - root - INFO - Closing Down 20181230171026
+2018-12-30 17:11:22,445 - root - INFO - Starting Up 20181230171122
+2018-12-30 17:11:28,739 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/u-ame_00.mp4
+2018-12-30 17:11:32,188 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 井 not available from KanjiAlive
+2018-12-30 17:11:35,327 - root - INFO - @nasvillanueva_ https://media.kanjialive.com/kanji_animations/kanji_mp4/sama_00.mp4
+2018-12-30 17:11:38,476 - root - INFO - @jufracaqui https://media.kanjialive.com/kanji_animations/kanji_mp4/o(kiru)_00.mp4
+2018-12-30 17:11:41,621 - root - INFO - @coollead ERROR: Stroke Order MP4 for 糞 not available from KanjiAlive
+2018-12-30 17:11:44,766 - root - INFO - @Sryn https://media.kanjialive.com/kanji_animations/kanji_mp4/bun-fumi_00.mp4
+2018-12-30 17:11:47,921 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/(sekinin)kan_00.mp4
+2018-12-30 17:11:51,053 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 17:11:54,201 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/shi-ko_00.mp4
+2018-12-30 17:11:57,344 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/neko_00.mp4
+2018-12-30 17:12:00,882 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 17:12:00,882 - root - INFO - @SrynTwo queried ア
+2018-12-30 17:12:00,882 - root - INFO - @SrynTwo queried あ
+2018-12-30 17:12:15,887 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171215
+2018-12-30 17:12:33,357 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171233
+2018-12-30 17:12:50,533 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171250
+2018-12-30 17:13:07,969 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171307
+2018-12-30 17:13:25,125 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171325
+2018-12-30 17:13:42,549 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171342
+2018-12-30 17:13:59,724 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171359
+2018-12-30 17:14:16,837 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171416
+2018-12-30 17:14:33,918 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171433
+2018-12-30 17:14:51,204 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171451
+2018-12-30 17:14:52,458 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171451) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:15:08,514 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171508
+2018-12-30 17:15:09,668 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171508) with Exception=[{u'message': u'To protect our users from spam and other malicious activity, this account is temporarily locked. Please log in to https://twitter.com to unlock your account.', u'code': 326}]
+2018-12-30 17:15:25,673 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171525
+2018-12-30 17:15:26,746 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171525) with Exception=[{u'message': u'To protect our users from spam and other malicious activity, this account is temporarily locked. Please log in to https://twitter.com to unlock your account.', u'code': 326}]
+2018-12-30 17:15:42,797 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171542
+2018-12-30 17:15:43,838 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171542) with Exception=[{u'message': u'To protect our users from spam and other malicious activity, this account is temporarily locked. Please log in to https://twitter.com to unlock your account.', u'code': 326}]
+2018-12-30 17:15:59,882 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171559
+2018-12-30 17:16:00,998 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171559) with Exception=[{u'message': u'To protect our users from spam and other malicious activity, this account is temporarily locked. Please log in to https://twitter.com to unlock your account.', u'code': 326}]
+2018-12-30 17:16:17,047 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171617
+2018-12-30 17:16:18,143 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171617) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:16:34,193 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171634
+2018-12-30 17:16:35,200 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171634) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:16:51,249 - root - INFO - @Sryn Stats for 20181230 = 50 20181230171651
+2018-12-30 17:16:52,365 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 50 20181230171651) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:16:52,365 - root - INFO - Closing Down 20181230171652
+2018-12-30 17:20:11,143 - root - INFO - Starting Up 20181230172011
+2018-12-30 17:21:00,501 - root - ERROR - ERROR: In getDateStats(201812301720)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301720'
+2018-12-30 17:21:00,501 - root - INFO - @Sryn Stats for 201812301720 = UNAVAILABLE 20181230172100
+2018-12-30 17:22:05,808 - root - ERROR - ERROR: In getDateStats(201812301721)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301721'
+2018-12-30 17:22:05,809 - root - INFO - @Sryn Stats for 201812301721 = UNAVAILABLE 20181230172205
+2018-12-30 17:22:06,942 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301721 = UNAVAILABLE 20181230172205) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:23:11,214 - root - ERROR - ERROR: In getDateStats(201812301722)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301722'
+2018-12-30 17:23:11,216 - root - INFO - @Sryn Stats for 201812301722 = UNAVAILABLE 20181230172311
+2018-12-30 17:23:12,310 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301722 = UNAVAILABLE 20181230172311) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:24:00,497 - root - ERROR - ERROR: In getDateStats(201812301723)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301723'
+2018-12-30 17:24:00,497 - root - INFO - @Sryn Stats for 201812301723 = UNAVAILABLE 20181230172400
+2018-12-30 17:24:01,611 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301723 = UNAVAILABLE 20181230172400) with Exception=[{u'message': u"This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later.", u'code': 226}]
+2018-12-30 17:25:05,853 - root - ERROR - ERROR: In getDateStats(201812301724)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301724'
+2018-12-30 17:25:05,853 - root - INFO - @Sryn Stats for 201812301724 = UNAVAILABLE 20181230172505
+2018-12-30 17:25:06,874 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301724 = UNAVAILABLE 20181230172505) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:26:11,161 - root - ERROR - ERROR: In getDateStats(201812301725)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301725'
+2018-12-30 17:26:11,164 - root - INFO - @Sryn Stats for 201812301725 = UNAVAILABLE 20181230172611
+2018-12-30 17:26:12,305 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301725 = UNAVAILABLE 20181230172611) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:27:00,439 - root - ERROR - ERROR: In getDateStats(201812301726)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301726'
+2018-12-30 17:27:00,439 - root - INFO - @Sryn Stats for 201812301726 = UNAVAILABLE 20181230172700
+2018-12-30 17:27:01,555 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301726 = UNAVAILABLE 20181230172700) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:28:05,835 - root - ERROR - ERROR: In getDateStats(201812301727)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301727'
+2018-12-30 17:28:05,835 - root - INFO - @Sryn Stats for 201812301727 = UNAVAILABLE 20181230172805
+2018-12-30 17:28:06,904 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301727 = UNAVAILABLE 20181230172805) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:29:11,195 - root - ERROR - ERROR: In getDateStats(201812301728)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301728'
+2018-12-30 17:29:11,197 - root - INFO - @Sryn Stats for 201812301728 = UNAVAILABLE 20181230172911
+2018-12-30 17:29:12,229 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301728 = UNAVAILABLE 20181230172911) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:30:00,477 - root - ERROR - ERROR: In getDateStats(201812301729)
+Traceback (most recent call last):
+  File "twitterBotTest.py", line 310, in getDateStats
+    prevStats = config['statistics'][aDate]
+KeyError: '201812301729'
+2018-12-30 17:30:00,477 - root - INFO - @Sryn Stats for 201812301729 = UNAVAILABLE 20181230173000
+2018-12-30 17:30:01,510 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 201812301729 = UNAVAILABLE 20181230173000) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:30:17,556 - root - INFO - Closing Down 20181230173017
+2018-12-30 17:30:18,674 - root - ERROR - In updateStatusWithLog(aStatus=Closing Down 20181230173017) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2018-12-30 17:40:33,928 - root - INFO - Starting Up 20181230174033
+2018-12-30 17:40:39,064 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/u-ame_00.mp4
+2018-12-30 17:40:42,508 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 井 not available from KanjiAlive
+2018-12-30 17:40:45,797 - root - INFO - @nasvillanueva_ https://media.kanjialive.com/kanji_animations/kanji_mp4/sama_00.mp4
+2018-12-30 17:40:48,942 - root - INFO - @jufracaqui https://media.kanjialive.com/kanji_animations/kanji_mp4/o(kiru)_00.mp4
+2018-12-30 17:40:52,092 - root - INFO - @coollead ERROR: Stroke Order MP4 for 糞 not available from KanjiAlive
+2018-12-30 17:40:55,217 - root - INFO - @Sryn https://media.kanjialive.com/kanji_animations/kanji_mp4/bun-fumi_00.mp4
+2018-12-30 17:40:58,363 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/(sekinin)kan_00.mp4
+2018-12-30 17:41:01,543 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 17:41:04,654 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/shi-ko_00.mp4
+2018-12-30 17:41:07,833 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/neko_00.mp4
+2018-12-30 17:41:10,948 - root - INFO - @SrynTwo ERROR: Stroke Order MP4 for 亜 not available from KanjiAlive
+2018-12-30 17:41:10,951 - root - INFO - @SrynTwo queried ア
+2018-12-30 17:41:10,951 - root - INFO - @SrynTwo queried あ
+2018-12-30 17:43:06,565 - root - INFO - @SrynTwo https://media.kanjialive.com/kanji_animations/kanji_mp4/kai(ga)_00.mp4
+2018-12-30 18:29:17,584 - root - INFO - @0x9ABC https://media.kanjialive.com/kanji_animations/kanji_mp4/tan-saga(su)_00.mp4
+2018-12-31 00:00:15,769 - root - INFO - @Sryn Stats for 20181230 = 65
+2018-12-31 00:00:16,880 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181230 = 65) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]
+2019-01-01 00:00:08,409 - root - INFO - @Sryn Stats for 20181231 = 0
+2019-01-01 00:00:09,799 - root - ERROR - In updateStatusWithLog(aStatus=@Sryn Stats for 20181231 = 0) with Exception=[{u'message': u'Application cannot perform write actions. Contact Twitter Platform Operations through https://support.twitter.com/forms/platform', u'code': 261}]

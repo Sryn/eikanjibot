@@ -11,9 +11,12 @@ import datetime
 # https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
 import unicodedata
 import KanjiAliveMP4
+import logging
 
 defaultHeadLength = len('@eiKanjiBot ')
 intervalSeconds = 15.0
+currentStrDate = datetime.datetime.now().strftime("%Y%m%d")
+# currentStrDate = datetime.datetime.now().strftime("%Y%m%d%H%M") #temp for proof
 
 # using config.py file
 # def getAPI():
@@ -27,6 +30,11 @@ intervalSeconds = 15.0
 #     )
 
 #     return tweepy.API(auth)
+
+def getStrDateTimeNow(strFormat):
+    if len(strFormat) == 0:
+        strFormat = "%Y%m%d%H%M%S"
+    return datetime.datetime.now().strftime(strFormat)
 
 # using config.json file thru ConfigParser
 def getAPI2():
@@ -88,10 +96,21 @@ def tweetUpdateStatus(api, aString):
 
 def tweetReplyStatus(api, aString, statusID):
     # print 'Tweeting Back: ' + aString
-    api.update_status(aString, statusID)
-    # Wait one second to prevent flooding Twitter
-    # https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
-    time.sleep(1)
+    rtnInt = 0
+    try:
+        api.update_status(aString, statusID)
+        rtnInt = 0
+    except tweepy.error.TweepError as error:
+        print 'ERROR: TweepError has occured with statusID = ' + str(statusID) + ' at ' + getStrDateTimeNow("%Y%m%d%H%M%S") + ' and \nError = ' + str(error)
+        rtnInt = -1
+    except Exception as ex:
+        print 'ERROR: In tweetReplyStatus statusID=' + str(statusID) + ' ' + getStrDateTimeNow("%Y%m%d%H%M%S") + '\nex:' + ex
+        rtnInt = -2
+    finally:
+        # Wait one second to prevent flooding Twitter
+        # https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
+        time.sleep(1)
+        return rtnInt
 
 def printHomeTimeline(api):
     public_tweets = api.home_timeline()
@@ -150,6 +169,7 @@ def checkFirstCharacterCJK(aChar):
     rtnBool = False
     if len(aChar) == 1:
         aCharName = getFirstCharacterName(aChar)
+        # if first three characters of aCharName are 'CJK'
         if aCharName[:3] == 'CJK':
             rtnBool = True
     return rtnBool
@@ -178,30 +198,60 @@ def tweetBack(api, status):
         # msgBody = KanjiAliveMP4.rtnMP4Test(firstCharacter)
         msgBody = KanjiAliveMP4.getKanjiAliveMP4(firstCharacter)
         # msgBody += ' ' + strDateTime
-    # else:
+        updateStatusString = '@' + toUser + ' ' + msgBody
+        rtnInt = tweetReplyStatus(api, updateStatusString, status.id)
+        logging.info(updateStatusString)
+    else:
     #     msgBody = 'Usage: \'@eiKanjiBot {Kanji}\' where {Kanji} is the one Kanji that you want the stroke order MP4 of ' + strDateTime
-    updateStatusString = '@' + toUser + ' ' + msgBody
-    tweetReplyStatus(api, updateStatusString, status.id)
+        logging.info('@' + toUser + ' queried ' + firstCharacter)
+        rtnInt = 0
+    
+    return rtnInt
+
+def updateTodaysStatistics(strToday, statusesCount):
+    #open the file to get all JSON data
+    with open('varConfig.json', 'r') as f:
+        config = json.load(f)
+
+    #edit the data
+    try:
+        todaysPrevStats = config['statistics'][strToday]
+        todaysNewStats = todaysPrevStats + statusesCount
+        config['statistics'][strToday] = todaysNewStats
+    except Exception as error:
+        print 'ERROR: ' + str(error)
+        # https://thispointer.com/python-how-to-add-append-key-value-pairs-in-dictionary-using-dict-update/
+        newTodaysField = {strToday: statusesCount}
+        config['statistics'].update(newTodaysField)
+
+    #write it back to the file
+    with open('varConfig.json', 'w') as f:
+        json.dump(config, f)
 
 def printMentionsTimeline(api):
     currMaxMentionID = 0
     lastMentionID = getLastMentionID()
-    statuses = api.mentions_timeline(lastMentionID)
-    numTweet = 1
-    for status in statuses:
-        # print numTweet + ': ' + str(status.id) + ' - ' + str(status.text)
-        # print str(numTweet) + ': ' + str(status.id) + ', status.source - ' + status.source + ', status.user.source - ' + status.user.name + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
-        # print str(numTweet) + ': ' + str(status.id) + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
-        numTweet += 1
-        tweetBack(api, status)
-        if int(status.id) > currMaxMentionID:
-            currMaxMentionID = int(status.id)
-    
-    if currMaxMentionID > lastMentionID:
-        updateLastMentionID(currMaxMentionID)
+    try:
+        statuses = api.mentions_timeline(lastMentionID)
+        # numTweet = 1
+        for status in statuses:
+            # print numTweet + ': ' + str(status.id) + ' - ' + str(status.text)
+            # print str(numTweet) + ': ' + str(status.id) + ', status.source - ' + status.source + ', status.user.source - ' + status.user.name + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
+            # print str(numTweet) + ': ' + str(status.id) + ', status.user.screen_name - ' + status.user.screen_name + ', ' + status.text 
+            # numTweet += 1
+            rtnInt = tweetBack(api, status)
+            if rtnInt == 0 and int(status.id) > currMaxMentionID:
+                currMaxMentionID = int(status.id)
+        
+        if currMaxMentionID > lastMentionID:
+            updateLastMentionID(currMaxMentionID)
 
-    strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    print 'Finished printMentionsTimeline with ' + str(len(statuses)) + ' statuses ' + strDateTime
+        updateTodaysStatistics(getStrDateTimeNow("%Y%m%d"), len(statuses))
+    except Exception as error:
+        print 'ERROR: in printMentionsTimeline() ' + getStrDateTimeNow("%Y%m%d%H%M%S") + ' ' + str(error)
+
+    # strDateTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    # print 'Finished printMentionsTimeline with ' + str(len(statuses)) + ' statuses ' + strDateTime
 
 def checkRunProgram():
     rtnBool = False
@@ -210,10 +260,11 @@ def checkRunProgram():
             config = json.load(f)
 
         keepRunning = config['runProgram']
-        if keepRunning == 'True':
+        keepRunning = keepRunning.upper()
+        if keepRunning == 'TRUE':
             rtnBool = True
     except:
-        print 'ERROR: cannot do checkRunProgram()'
+        print 'ERROR: cannot do checkRunProgram() at ' + getStrDateTimeNow("%Y%m%d%H%M%S")
 
     return rtnBool
 
@@ -221,13 +272,82 @@ def callTimer(secs):
     time.sleep(secs)
     return 1
 
+def getLoggingLevel():
+    with open('fixedConfig.json', 'r') as f:
+        config = json.load(f)
+
+    dictLoggingLevel = config['loggingLevel']
+    dictLoggingLevel = dictLoggingLevel.upper()
+
+    if dictLoggingLevel in {'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'}:
+        rtnLoggingLevel = dictLoggingLevel
+    else:
+        rtnLoggingLevel = 'INFO'
+
+    return str(rtnLoggingLevel)
+
+def setLoggingBasicConfig():
+    loggingLevel = getLoggingLevel()
+    logging.basicConfig(filename='eiKanjiBot.log', level=loggingLevel, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+def updateStatusWithLog(api, aStatus):
+    logging.info(aStatus)
+    try:
+        tweetUpdateStatus(api, aStatus)
+    except Exception as error:
+        logging.error("In updateStatusWithLog(aStatus=" + aStatus + ") with Exception=" + str(error))
+
+def getMasterHandle():
+    master = ''
+
+    try:
+        with open('fixedConfig.json', 'r') as f:
+            config = json.load(f)
+
+        master = config['master']
+    except Exception:
+        logging.error('ERROR: In getMasterHandle()', exc_info=True)
+
+    return master
+
+def getDateStats(aDate):
+    prevStats = 'UNAVAILABLE'
+    try:
+        with open('varConfig.json', 'r') as f:
+            config = json.load(f)
+
+        prevStats = config['statistics'][aDate]
+    except:
+        logging.error('ERROR: In getDateStats(' + aDate + ')', exc_info=True)
+    
+    return prevStats
+
+def updateDailyStatus(api):
+    global currentStrDate
+
+    if int(getStrDateTimeNow("%Y%m%d")) > int(currentStrDate):
+        try:
+            master = getMasterHandle()
+            prevStats = getDateStats(currentStrDate)
+            if len(master) > 0:
+                aStatus = '@' + master + ' Stats for ' + currentStrDate + ' = ' + str(prevStats)
+                # aStatus += ' ' + getStrDateTimeNow('') #temp for proof
+                updateStatusWithLog(api, aStatus)
+                # currentStrDate = getStrDateTimeNow("%Y%m%d%H%M") #temp for proof
+                currentStrDate = getStrDateTimeNow("%Y%m%d")
+        except Exception:
+            logging.error('ERROR: In updateDailyStatus()', exc_info=True)
+
 def main():
+    setLoggingBasicConfig()
+
     global intervalSeconds
     keepRunning = checkRunProgram()
 
     if keepRunning:
         # api = getAPI()
         api = getAPI2()
+        updateStatusWithLog(api, "Starting Up " + getStrDateTimeNow(''))
 
         # printHomeTimeline(api)
 
@@ -242,9 +362,11 @@ def main():
             printMentionsTimeline(api)
             callTimer(intervalSeconds)
             keepRunning = checkRunProgram()
+            updateDailyStatus(api)
 
-        print 'Done'
+        print 'Closing down at ' + getStrDateTimeNow("%Y%m%d%H%M%S")
+        updateStatusWithLog(api, "Closing Down " + getStrDateTimeNow(''))
     else:
-        print 'Exiting because keepRunning is False'
+        print 'Exiting because keepRunning is FALSE at ' + getStrDateTimeNow("%Y%m%d%H%M%S")
 
 main()

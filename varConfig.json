@@ -1,10 +1,1 @@
-{
-    "comment": {
-        "createDate": "20181228",
-        "createby": "Sryn",
-        "purpose": "To store non-secret settings + offline variables that will change",
-        "fileName": "varConfig.json"
-    },
-    "lastMentionID": 1077213307109396480,
-    "lastMentionIDBackup": 1077213307109396480
-}
+{"comment": {"createDate": "20181228", "createby": "Sryn", "purpose": "To store non-secret settings + offline variables that will change", "fileName": "varConfig.json"}, "lastMentionID": 1079323455047249920, "statistics": {"20190101": 0, "20181229": 0, "20181231": 0, "20181230": 65}, "lastMentionIDBackup": 1077213307109396480}
