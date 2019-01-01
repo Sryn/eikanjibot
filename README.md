@@ -66,6 +66,8 @@ To Do:
         * Fixed this by only getting statuses (mentions) that are newer than lastMentionID
       * Now, have to ensure that the lastMentionID that is updated in config.json is the newest of the statuses 
         * Done this by moving the updateLastMentionID to the function that gets the mentions and only updating the largest number status.id
+        * Won't update lastMentionID if there's an error for that ID
+          * But this current method will ignore an error ID if a later ID in the same batch successfully gets replied to
   * Need to prepare some draft functions that:
     1. Reads the body of the query tweet/mention/status <- DONE
     2. Remove the '@aTwitterUser ' from it, where that is the Twitter handle of the user that sent the mention + the space after it <- DONE
@@ -83,7 +85,7 @@ To Do:
     4. Determines whether that character is a (Japanese) kanji or not
        * If that is not a (Japanese) kanji, then reply to @aTwitterUser that it (the bot) cannot understand the query mention and include a usage message, or don't reply at all, or ..
        * If that is a (Japanese) kanji, then reply back to @aTwitterUser that same kanji
-      * DONE - For now, reply with usage help to non-kanji mentions
+      * DONE - <strike>For now, reply with usage help to non-kanji mentions</strike> Silent ignore for non-CJK queries
 * Test Twitter Bot to post MP4 or Animated GIF
   * Need to call up the other Python file to get the stroke order MP4 (? Should I do it this way)
     * DONE - Figured out it was something similar to the config.py settings import, but this time a function call
@@ -96,13 +98,18 @@ To Do:
     * DONE - see setIntervalTest.py
   * Have set an on/off switch in the runProgram field in fixedConfig.json
   * Moved lastMentionID field to varConfig.json
+  * varConfig.json is for storing non-secret variables that need to be available offline
   * config.json is now purely for secret settings
+  * fixedConfig.json is for non-secret settings that doesn't change but needs to be saved offline
 * Host the combined program Bot somewhere
   * Note on potential usage to gauge data requirements so as to anticipate data / hosting bill
   * Probably code in something into the Bot in case of cost overruns
   * Also think about and mitigate flooding
+    * Polling for new mentions every 15s
+    * Time.Sleep between replies is 1s
   * Build in telemetrics into the Bot for statistical purposes
-* Make config.json.example
+    * For now, sending a tweet to master (@Sryn) daily at change of date the count of replies made that day, ignoring silent ignores but counting no-MP4 replies as well
+* Make config.json.example <- DONE
 * Release and announce the availability of the Bot
   * It's Alive!!
     * Hosted on @PythonAnywhere

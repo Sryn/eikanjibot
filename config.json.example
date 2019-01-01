@@ -1,0 +1,19 @@
+{
+    "comment": {
+        "createDate": "20181224",
+        "createby": "Sryn",
+        "purpose": "To store secret settings",
+        "ReferenceURL": "https://hackernoon.com/4-ways-to-manage-the-configuration-in-python-4623049e841b",
+        "fileName": "config.json",
+        "note": "Please ensure this filename, less the .example extension, is in .gitignore so as these setting will not me exposed over the internet"
+    },
+    "RapidAPI": {
+        "api-key": "api-key"
+    },
+    "TwitterAPI": {
+        "Access-token-secret": "Access-token-secret",
+        "API-secret-key": "API-secret-key",
+        "Access-token": "Access-token",
+        "API-key": "API-key"
+    }
+}
