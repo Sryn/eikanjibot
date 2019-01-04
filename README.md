@@ -118,4 +118,4 @@ To Do:
       * Had to comment out two print lines that also prints the kanji, as the bash console on PA can't show unicodes outside a certain range
       * Also had to comment out the 'import config' + getAPI() as I didn't upload config.py
     * Announced on Twitter and Reddit at about 5:45pm Fri 28th Dec 2018, UTC+8
-    * Got twitter banned twice because update testing caused spamming. Fixed those errors and hope Twitter lifts the ban.
+    * Got twitter banned twice because update testing caused spamming. Fixed those errors and hope Twitter lifts the ban. <- It's back online now 201901042100+8
